@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> ALL Authors </h1>
+  {% if all_authors %}
+    <ul>
+      {% for author in all_authors %}
+        <li>{{ author }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p> нету авторов </p>
+  {% endif %}
+
+{% endblock %}
