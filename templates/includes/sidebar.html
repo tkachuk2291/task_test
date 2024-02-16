@@ -1,9 +1,12 @@
 <ul class="sidebar-nav">
-{#  {% if user.is_authenticated %}#}
+  {% if user.is_authenticated %}
     <li>User: {{ request.user }}</li>
-{#    {% else %}#}
-{#    <li><a href="{% url 'accounts:login'%}">Login</a></li>#}
-{#  {% endif %}#}
+    <li>
+      <a href="{% url 'logout'%}">Logout</a>
+    </li>
+    {% else %}
+    <li><a href="{% url 'login'%}">Login</a></li>
+  {% endif %}
   <li><a href="{% url 'catalog:index' %}">Home</a></li>
   <li><a href="{% url "catalog:authors-list" %}">All Authors</a></li>
   <li><a href="{% url "catalog:book-list" %}">All Book</a></li>
